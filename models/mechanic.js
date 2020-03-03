@@ -7,7 +7,8 @@ var MechanicSchema = new Schema({
   category: { type: String, required: true },
   address: { type: String, required: true },
   city: { type: String, required: true },
-  state: { type: String, required: true }
+  state: { type: String, required: true },
+  updated_at: { type: Date, default: Date.now }
 });
 
 module.exports = mongoose.model('Mechanic', MechanicSchema);

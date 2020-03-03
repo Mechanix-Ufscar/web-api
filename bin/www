@@ -1,11 +1,11 @@
-#!/usr/bin/env node
+#!/usr/bin/env mechanix
 
 /**
  * Module dependencies.
  */
 
 var app = require('../app');
-var debug = require('debug')('node-rest-auth:server');
+var debug = require('debug')('mechanix-rest-auth:server');
 var http = require('http');
 
 /**
