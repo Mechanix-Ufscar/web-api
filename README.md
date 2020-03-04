@@ -21,12 +21,18 @@ The tutorial is also available as Postman.
 <details>
 <summary><strong>Details</strong></summary>
 
--   [Data Entities](#Data Entities)
--   [Architecture](#Architecture)
--   [Prerequisites](#Prerequisites)
--   [Installing / Getting started](#Installing / Getting started)
--   [Example CRUD Operations](#Example CRUD Operations)
--   [Authors](#Authors)
+-   [Data Entities](#data-entities)
+-   [Architecture](#architecture)
+-   [Prerequisites](#prerequisites)
+-   [Getting started](#getting-started)
+-   [Example CRUD Operations](#example-crud-operations)
+    - [Create an User](#create-an-user)
+    - [Create a Mechanic](#create-a-mechanic)
+    -[Read a Mechanic](#read-a-mechanic)
+    	-[Read a Mechanic by Id](#read-a-mechanic-by-id)
+    - [Update a Mechanic](#update-a-mechanic)
+    - [Delete a Mechanic](#delete-a-mechanic)
+-   [Authors](#authors)
 </details>
 
 ## Data Entities
@@ -67,7 +73,7 @@ The flow of this tutorial is very simple,:
   - [NPM](https://www.npmjs.com/get-npm) 6.13.4 or higher
   - [MongoDB](https://www.mongodb.com/download-center) 4.0.5 or higher 
 
-## Installing / Getting started
+## Getting started
 
 Clone this repo to your local machine using https://github.com/Mechanix-Ufscar/web-api.git
 
@@ -134,7 +140,7 @@ The REST API for Mechanic resource is restricted for the authorized user only.  
 
     GET /api/mechanic
 
-You should see this message on the Postman result.
+You should see this message:
 
 `Unauthorized`
 
@@ -152,7 +158,7 @@ If login is successful, we should get a JWT token like below.
 ```
 Just copy and paste the token value for use in request headers of restricted mechanic resource. Now, do previous get mechanic and add this header.
 
-And it will return the message above:
+And it will return the message below:
 
 	{
 		"success": true,
