@@ -58,7 +58,7 @@ The struture of this entity is represented below.
 
 ## Architecture
 
-In this project, we use Node, [Express](http://www.passportjs.org/packages/passport-jwt/), MongoDB and [Mongoose](https://www.npmjs.com/package/mongoose) REST API using [Passport.js](http://www.passportjs.org/packages/passport-jwt/) Authentication or log in.
+In this project, we use Node, [Express](http://www.passportjs.org/packages/passport-jwt/), MongoDB and [Mongoose](https://www.npmjs.com/package/mongoose) REST API using [Passport.js](http://www.passportjs.org/packages/passport-jwt/) Authentication on login.
 
 So, in this project, you will see a lot of Passport.js domination. Authentication mechanism to generate JSON web token (JWT), all handled by Passport.js. The Express job just handles the API routing, while the middleware for accessing the MongoDB database is handled by Mongoose.js.
 
@@ -181,7 +181,7 @@ And it will return the message below:
 ## Authors
 
 * **Camille Kamimura** - *Mathematical Modelling Analyst* - [CamilleKamimura](https://github.com/CamilleKamimura)
-* **Richard Felix** - *Data Scientist* - [wagnerabr](https://github.com/wagnerabr)
-* **Wagner Ribeiro** - *PHP developer* - [riichfelix](https://github.com/riichfelix)
+* **Richard Felix** - *Data Specialist* - [riichfelix](https://github.com/riichfelix)
+* **Wagner Ribeiro** - *PHP developer* - [wagnerabr](https://github.com/wagnerabr)
 
 See also the list of [contributors](https://github.com/Mechanix-Ufscar/web-api/graphs/contributors) who participated in this project.
