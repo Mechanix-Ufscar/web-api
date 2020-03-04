@@ -28,10 +28,11 @@ The tutorial is also available as Postman.
 -   [Example CRUD Operations](#example-crud-operations)
     - [Create an User](#create-an-user)
     - [Create a Mechanic](#create-a-mechanic)
-    -[Read a Mechanic](#read-a-mechanic)
-    	-[Read a Mechanic by Id](#read-a-mechanic-by-id)
+    - [Read a Mechanic](#read-a-mechanic)
+    	- [Read a Mechanic by Id](#read-a-mechanic-by-id)
     - [Update a Mechanic](#update-a-mechanic)
     - [Delete a Mechanic](#delete-a-mechanic)
+    	- [Logout](#logout)
 -   [Authors](#authors)
 </details>
 
@@ -92,7 +93,11 @@ Make sure MongoDB server is running. Open another terminal, then type this comma
 
 Now test your Express server by type this command.
 
-    npm start` or `nodemon
+    npm start 
+    
+or 
+
+    nodemon
 
 You will see this log in the terminal if the server runs correctly.
 
@@ -142,7 +147,7 @@ The REST API for Mechanic resource is restricted for the authorized user only.  
 
 You should see this message:
 
-`Unauthorized`
+    Unauthorized
 
 To access the mechanic resource, we have to log in using the previously registered user. Change method to "POST" and then fill credentials you have created before.
 
@@ -167,16 +172,107 @@ And it will return the message below:
 
 ## Read a Mechanic
 
+To read all records from the mechanic's table the request can be written as:
 
+    GET /api/mechanic
+
+It will return all records created:
+
+	[
+	    {
+		"_id": "5e600a76c396c42fa4b49fed",
+		"name": "Wagner Ribeiro",
+		"title": "Oficina Ribeiro",
+		"category": "Motors rectification",
+		"address": "Rodovia João Leme dos Santos, SP-264, Km 110",
+		"city": "Sorocaba",
+		"state": "São Paulo",
+		"updated_at": "2020-03-04T20:07:18.110Z",
+		"__v": 0
+	    }
+	]
+
+:warning: **Use the id value to perform the CRUD operarions that requires a mechanic identifier.** :warning:
 
 
 ### Read a Mechanic by id
 
+If you want to get a specific record from mechanic's table, the request can be written as:
+
+    GET /api/mechanic/<mechanic_id>
+
+And it will return all fields  number of deleted rows:
+
+	{
+	    "_id": "5e600a76c396c42fa4b49fed",
+	    "name": "Wagner Ribeiro",
+	    "title": "Oficina Ribeiro",
+	    "category": "Motors rectification",
+	    "address": "Rodovia João Leme dos Santos, SP-264, Km 110",
+	    "city": "Sorocaba",
+	    "state": "São Paulo",
+	    "updated_at": "2020-03-04T20:07:18.110Z",
+	    "__v": 0
+	}
+
 ## Update a Mechanic
+
+If you want to update a record from mechanic's table, the request can be written as:
+
+    PUT /api/mechanic/<mechanic_id>
+
+Send as a body the fields you want to update. For example:
+
+    {
+        "title": "Mecânica Ribeiro"
+    }
+
+This adjusts the title of the mechanic. And the return value is the register which will be updated:
+
+	{
+	    "_id": "5e600a76c396c42fa4b49fed",
+	    "name": "Wagner Ribeiro",
+	    "title": "Oficina Ribeiro",
+	    "category": "Motors rectification",
+	    "address": "Rodovia João Leme dos Santos, SP-264, Km 110",
+	    "city": "Sorocaba",
+	    "state": "São Paulo",
+	    "updated_at": "2020-03-04T12:15:39.434Z",
+	    "__v": 0
+	}
 
 ## Delete a Mechanic
 
+If you want to delete a record from this table the request can be written as:
 
+    DELETE /api/mechanic/<mechanic_id>
+
+And it will return the register which will be deleted.
+
+	{
+	    "_id": "5e600a76c396c42fa4b49fed",
+	    "name": "Wagner Ribeiro",
+	    "title": "Oficina Ribeiro",
+	    "category": "Motors rectification",
+	    "address": "Rodovia João Leme dos Santos, SP-264, Km 110",
+	    "city": "Sorocaba",
+	    "state": "São Paulo",
+	    "updated_at": "2020-03-04T20:07:18.110Z",
+	    "__v": 0
+	}
+	
+### Logout
+
+To logout the currently user, you must send a POST request with an empty body to the logout endpoint.
+
+    POST /api/signout
+
+If logout is successful, it will return the message below.
+
+	{
+		"success": true,
+		"msg": "Sign out successfully."
+	}
 
 ## Authors
 
