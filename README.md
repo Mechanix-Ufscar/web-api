@@ -14,7 +14,7 @@ This tutorial  introduces the concept of [CRUD operations](https://en.wikipedia.
 
 The tutorial is also available as Postman.
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://www.getpostman.com/collections/de5fcdece7e85635ad6b)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/de5fcdece7e85635ad6b)
 
 ## Contents
 
