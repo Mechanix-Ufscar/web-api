@@ -161,7 +161,26 @@ If login is successful, we should get a JWT token like below.
       "token": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyIkX18iOnsic3RyaWN0TW9kZSI6dHJ1ZSwic2VsZWN0ZWQiOnt9LCJnZXR0ZXJzIjp7fSwid2FzUG9wdWxhdGVkIjpmYWxzZSwiYWN0aXZlUGF0aHMiOnsicGF0aHMiOnsicGFzc3dvcmQiOiJpbml0IiwidXNlcm5hbWUiOiJpbml0IiwiX192IjoiaW5pdCIsIl9pZCI6ImluaXQifSwic3RhdGVzIjp7Imlnbm9yZSI6e30sImRlZmF1bHQiOnt9LCJpbml0Ijp7Il9fdiI6dHJ1ZSwicGFzc3dvcmQiOnRydWUsInVzZXJuYW1lIjp0cnVlLCJfaWQiOnRydWV9LCJtb2RpZnkiOnt9LCJyZXF1aXJlIjp7fX0sInN0YXRlTmFtZXMiOlsicmVxdWlyZSIsIm1vZGlmeSIsImluaXQiLCJkZWZhdWx0IiwiaWdub3JlIl19LCJlbWl0dGVyIjp7ImRvbWFpbiI6bnVsbCwiX2V2ZW50cyI6e30sIl9ldmVudHNDb3VudCI6MCwiX21heExpc3RlbmVycyI6MH19LCJpc05ldyI6ZmFsc2UsIl9kb2MiOnsiX192IjowLCJwYXNzd29yZCI6IiQyYSQxMCRCLjByc3lnTHEwMzE4Njk5RWNlTU9lMllqWlJQZ3ZwL1VhZk8yb25OUkwuZDVWR3hmUjlOZSIsInVzZXJuYW1lIjoidGVzdEBleGFtcGxlLmNvbSIsIl9pZCI6IjU4ZWI5MzljNGE4MGYzNGU4OGU2NGY2MiJ9LCJpYXQiOjE0OTE4MzQ0OTF9.O2ljjVJVYBt65b0bTWnjyU-IDwJ9gXfDbzqDO7lccWc"
     }
 ```
-Just copy and paste the token value for use in request headers of restricted mechanic resource. Now, do previous get mechanic and add this header.
+Just copy and paste the token value for use in request headers of restricted mechanic resource. Now, do previous get mechanic and add this header. It will return an empty array.
+
+
+:warning: **Remember: for all CRUD Operarions, you must send the JWT token in request header.** :warning:
+
+Now, to create a new mechanic, you must send the request written as:
+
+    POST /api/mechanic
+
+Send as a body values for all requred fields. For example:
+
+    {
+        "name": "Wagner Ribeiro",
+        "title": "Oficina Ribeiro",
+        "category": "Motors rectification",
+        "address": "Rodovia João Leme dos Santos, SP-264, Km 110",
+        "city": "Sorocaba",
+        "state": "São Paulo"
+    }
+
 
 And it will return the message below:
 
@@ -252,7 +271,7 @@ And it will return the register which will be deleted.
 	{
 	    "_id": "5e600a76c396c42fa4b49fed",
 	    "name": "Wagner Ribeiro",
-	    "title": "Oficina Ribeiro",
+	    "title": "Mecânica Ribeiro",
 	    "category": "Motors rectification",
 	    "address": "Rodovia João Leme dos Santos, SP-264, Km 110",
 	    "city": "Sorocaba",
